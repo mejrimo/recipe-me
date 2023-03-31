@@ -1,0 +1,28 @@
+:root {
+	min-height: 100vh;
+	background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+	position: relative;
+	padding-bottom: 60px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-weight: 700;
+}
+
+h2 {
+	font-family: 'Dancing Script', cursive;
+	font-weight: 600;
+}
+
+button {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
