@@ -5,6 +5,7 @@
 	scroll-behavior: smooth;
 	position: relative;
 	padding-bottom: 60px;
+	touch-action: manipulation;
 }
 * {
 	margin: 0;
