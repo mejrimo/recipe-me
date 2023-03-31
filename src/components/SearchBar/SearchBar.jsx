@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../../assets/img/vegetarian-food-icon.svg';
 import './searchbar.css';
 
@@ -24,11 +23,9 @@ const SearchBar = ({ onData }) => {
 			<div className="form-container">
 				<form onSubmit={getSearch}>
 					<input className="search-bar" type="text" value={search} onChange={updateSearch} />
-					<Link to="/" rel="noopener noreferrer">
-						<button className="search-button" type="submit">
-							Search
-						</button>
-					</Link>
+					<button className="search-button" type="submit">
+						Search
+					</button>
 				</form>
 			</div>
 		</nav>
