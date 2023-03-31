@@ -16,6 +16,8 @@ nav {
 }
 
 .logo {
+	display: flex;
+	align-items: center;
 	width: 30%;
 }
 
@@ -51,4 +53,48 @@ nav {
 	border-radius: 10px;
 	font-size: 0.7rem;
 	cursor: pointer;
+}
+
+/* TABLET QUERIES */
+@media (min-width: 768px) {
+	.logo {
+		width: 25%;
+	}
+
+	.logo-title {
+		font-size: 1.3rem;
+		margin: 0 12px;
+	}
+
+	.search-bar {
+		font-size: 0.9rem;
+		margin-right: 12px;
+	}
+
+	.search-button {
+		padding: 7px 12px;
+		font-size: 0.9rem;
+	}
+}
+
+/* DESKTOP QUERIES */
+@media (min-width: 992px) {
+	.logo {
+		width: 15%;
+	}
+
+	.logo-title {
+		font-size: 1.2rem;
+		margin: 0 15px;
+	}
+
+	.search-bar {
+		font-size: 0.7rem;
+		margin-right: 15px;
+	}
+
+	.search-button {
+		padding: 7px 12px;
+		font-size: 0.7rem;
+	}
 }

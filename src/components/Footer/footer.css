@@ -11,6 +11,12 @@
 	right: 0;
 }
 
+.container-icone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .social-icon:link,
 .social-icon:visited {
 	cursor: pointer;
@@ -19,6 +25,7 @@
 	font-size: 0.9rem;
 	text-decoration: none;
 	transition: color 0.25s;
+	display: flex;
 }
 
 .social-icon:active,
@@ -49,4 +56,37 @@
 .about:active,
 .about:visited:active {
 	color: #c4e4cc;
+}
+
+/* TABLET QUERIES */
+@media (min-width: 768px) {
+	.social-icon:link,
+	.social-icon:visited {
+		font-size: 1.5rem;
+	}
+
+	.copyright,
+	.about:link,
+	.about:visited {
+		font-size: 0.8rem;
+	}
+}
+
+/* DESKTOP QUERIES */
+@media (min-width: 992px) {
+	.footer-container {
+		padding: 5px 10px;
+		margin-top: 5px;
+	}
+
+	.social-icon:link,
+	.social-icon:visited {
+		font-size: 1rem;
+	}
+
+	.copyright,
+	.about:link,
+	.about:visited {
+		font-size: 0.6rem;
+	}
 }

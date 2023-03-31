@@ -4,3 +4,17 @@
 	align-items: center;
 	height: 100vh;
 }
+
+/* TABLET QUERIES */
+@media (min-width: 768px) {
+	.error-message {
+		font-size: 2rem;
+	}
+}
+
+/* DESKTOP QUERIES */
+@media (min-width: 992px) {
+	.error-message {
+		font-size: 2.5rem;
+	}
+}

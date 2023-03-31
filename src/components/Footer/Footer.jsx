@@ -5,7 +5,7 @@ import './footer.css';
 const Footer = () => {
 	return (
 		<footer className="footer-container">
-			<div>
+			<div className="container-icone">
 				<a
 					href="https://github.com/mejrimo"
 					target="_blank"
