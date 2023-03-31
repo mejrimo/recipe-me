@@ -6,14 +6,19 @@ const Footer = () => {
 	return (
 		<footer className="footer-container">
 			<div>
-				<a href="https://github.com/mejrimo" target="_blank" rel="noopener noreferrer">
-					<AiFillGithub className="social-icon" />
+				<a
+					href="https://github.com/mejrimo"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="social-icon">
+					<AiFillGithub />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/mohamed-mejri-925157234/"
 					target="_blank"
-					rel="noopener noreferrer">
-					<AiFillLinkedin className="social-icon" />
+					rel="noopener noreferrer"
+					className="social-icon">
+					<AiFillLinkedin />
 				</a>
 			</div>
 			<div className="copyright">Copyright &copy; 2023. All rights reserved.</div>

@@ -11,13 +11,18 @@
 	right: 0;
 }
 
-.social-icon {
+.social-icon:link,
+.social-icon:visited {
+	cursor: pointer;
 	margin: 0 5px;
 	color: white;
 	font-size: 0.9rem;
+	text-decoration: none;
 	transition: color 0.25s;
 }
-.social-icon:hover {
+
+.social-icon:active,
+.social-icon:visited:active {
 	color: #c4e4cc;
 }
 
@@ -31,7 +36,8 @@
 	align-items: center;
 }
 
-.about {
+.about:link,
+.about:visited {
 	cursor: pointer;
 	margin: 0 5px;
 	font-size: 0.6rem;
@@ -40,6 +46,7 @@
 	transition: color 0.25s;
 }
 
-.about:hover {
+.about:active,
+.about:visited:active {
 	color: #c4e4cc;
 }
