@@ -9,7 +9,7 @@ import Recipes from './components/Recipes/Recipes';
 import SearchBar from './components/SearchBar/SearchBar';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=10&tags=vegetarian`;
+const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12&tags=vegetarian`;
 
 export const AppContext = createContext();
 
@@ -36,20 +36,23 @@ const App = () => {
 	}, []);
 
 	function handleSearchData(dataFromSearchBar) {
-		console.log(dataFromSearchBar);
 		setIsLoading(true);
 		const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&diet=vegetarian&addRecipeInformation=true&query=${dataFromSearchBar}`;
 
 		const fetchData = async () => {
 			try {
 				const res = await axios.get(searchUrl);
-				console.log(res);
 				const data = res.data.results;
 
-				setRecipes(data);
-				setIsLoading(false);
+				if (!data.length) {
+					setIsError(true);
+				} else {
+					setRecipes(data);
+					setIsLoading(false);
+				}
 			} catch (error) {
 				alert(error.message);
+				setIsLoading(false);
 				setIsError(true);
 			}
 		};
