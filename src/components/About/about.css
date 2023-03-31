@@ -1,0 +1,45 @@
+.about-page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
+.about-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+.back-arrow:link,
+.back-arrow:visited {
+	cursor: pointer;
+	color: black;
+	font-size: 1rem;
+	text-decoration: none;
+	transition: color 0.25s;
+}
+
+.back-arrow:active,
+.back-arrow:visited:active {
+	color: white;
+}
+
+.about-title h2 {
+	font-size: 1rem;
+	margin: 0 auto;
+}
+
+.about-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-text p {
+	max-width: 90%;
+	font-size: 0.6rem;
+	margin: 10px 0;
+}
