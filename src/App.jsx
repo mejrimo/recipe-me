@@ -59,26 +59,19 @@ const App = () => {
 
 	return (
 		<>
-			{isError ? (
-				<Error />
-			) : (
-				<>
-					{isLoading ? (
-						<Loader />
-					) : (
-						<Router>
-							<AppContext.Provider value={{ recipes }}>
-								<SearchBar onData={handleSearchData} />
-								<Routes>
-									<Route path="/" element={<Recipes />} />
-									<Route path="/about" element={<About />} />
-								</Routes>
-								<Footer />
-							</AppContext.Provider>
-						</Router>
-					)}
-				</>
-			)}
+			<Router>
+				<AppContext.Provider value={{ recipes }}>
+					<SearchBar onData={handleSearchData} />
+					<Routes>
+						<Route
+							path="/"
+							element={<>{isError ? <Error /> : <>{isLoading ? <Loader /> : <Recipes />}</>} </>}
+						/>
+						<Route path="/about" element={<About />} />
+					</Routes>
+					<Footer />
+				</AppContext.Provider>
+			</Router>
 		</>
 	);
 };
