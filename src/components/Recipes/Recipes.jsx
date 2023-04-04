@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../../App';
 import Recipe from '../Recipe/Recipe';
-import './recipes.css';
 
 const Recipes = () => {
 	const { recipes } = useContext(AppContext);
@@ -14,7 +13,13 @@ const Recipes = () => {
 		);
 	});
 
-	return <div className="recipes-container">{recipesElements}</div>;
+	return (
+		<div className="container mx-auto ">
+			<div className="grid my-10 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+				{recipesElements}
+			</div>
+		</div>
+	);
 };
 
 export default Recipes;

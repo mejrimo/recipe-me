@@ -1,10 +1,9 @@
 import { PacmanLoader } from 'react-spinners';
-import './loader.css';
 
 const Loader = () => {
 	const color = '#323a34';
 	return (
-		<div className="loader-container">
+		<div className="flex items-center justify-center h-screen">
 			<PacmanLoader color={color} />
 		</div>
 	);
