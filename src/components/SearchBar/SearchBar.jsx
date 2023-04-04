@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/vegetarian-food-icon.svg';
 import { AiOutlineSearch } from 'react-icons/ai';
 
@@ -27,9 +27,9 @@ const SearchBar = ({ onData }) => {
 	return (
 		<>
 			<div className="z-50 sticky top-0">
-				<nav className="relative flex flex-wrap items-center justify-between px-3 py-4  bg-verde drop-shadow">
+				<nav className="relative flex flex-wrap items-center justify-between px-3 py-4 bg-verde drop-shadow">
 					<div className="container flex flex-wrap items-center justify-between">
-						<div className="w-full relative flex items-center justify-between lg:w-auto">
+						<div className="w-full flex items-center justify-between lg:w-auto">
 							<a
 								href="/"
 								className="text-3xl font-bold leading-relaxed flex py-2 whitespace-no-wrap text-crema">
