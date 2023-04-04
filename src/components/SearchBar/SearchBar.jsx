@@ -30,12 +30,12 @@ const SearchBar = ({ onData }) => {
 				<nav className="relative flex flex-wrap items-center justify-between px-3 py-4  bg-verde drop-shadow">
 					<div className="container flex flex-wrap items-center justify-between">
 						<div className="w-full relative flex items-center justify-between lg:w-auto">
-							<Link
+							<a
 								to="#"
 								className="text-3xl font-bold leading-relaxed flex py-2 whitespace-no-wrap text-crema">
 								<img src={logo} alt="Recipe Me logo" className="w-9 me-2" />
 								<h1>Recipe Me</h1>
-							</Link>
+							</a>
 							<button
 								className="cursor-pointer text-3xl text-crema leading-none px-3 block lg:hidden outline-none focus:outline-none"
 								type="button"
