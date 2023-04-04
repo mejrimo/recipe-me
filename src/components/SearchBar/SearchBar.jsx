@@ -21,7 +21,7 @@ const SearchBar = ({ onData }) => {
 		closeMobileMenu();
 		onData(search);
 		setSearch('');
-		// navigate('/');
+		navigate('/');
 	}
 
 	return (
@@ -31,7 +31,7 @@ const SearchBar = ({ onData }) => {
 					<div className="container flex flex-wrap items-center justify-between">
 						<div className="w-full relative flex items-center justify-between lg:w-auto">
 							<a
-								to="/"
+								href="/"
 								className="text-3xl font-bold leading-relaxed flex py-2 whitespace-no-wrap text-crema">
 								<img src={logo} alt="Recipe Me logo" className="w-9 me-2" />
 								<h1>Recipe Me</h1>
