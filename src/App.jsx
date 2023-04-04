@@ -10,6 +10,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12&tags=vegetarian`;
+// https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&diet=vegetarian&number=12&addRecipeInformation=true
 
 export const AppContext = createContext();
 
@@ -37,7 +38,7 @@ const App = () => {
 
 	function handleSearchData(dataFromSearchBar) {
 		setIsLoading(true);
-		const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&diet=vegetarian&addRecipeInformation=true&query=${dataFromSearchBar}`;
+		const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${dataFromSearchBar}`;
 
 		const fetchData = async () => {
 			try {
