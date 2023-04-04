@@ -50,7 +50,7 @@ const SearchBar = ({ onData }) => {
 							}>
 							<form onSubmit={getSearch}>
 								<input
-									className="w-96 text-verde py-2 pl-3 pr-10 rounded-full focus:outline-verde focus:ring-verde focus:border-verde"
+									className="w-72 lg:w-96 text-verde py-2 pl-3 pr-10 rounded-full focus:outline-verde focus:ring-verde focus:border-verde"
 									type="text"
 									placeholder="Search for a recipe..."
 									value={search}
