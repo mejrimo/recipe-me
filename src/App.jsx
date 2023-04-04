@@ -47,6 +47,7 @@ const App = () => {
 				if (!data.length) {
 					setIsError(true);
 				} else {
+					setIsError(false);
 					setRecipes(data);
 					setIsLoading(false);
 				}
