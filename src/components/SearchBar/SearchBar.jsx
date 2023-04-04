@@ -38,7 +38,7 @@ const SearchBar = ({ onData }) => {
 			{/* SEARCH BAR */}
 			<div
 				id="form-container"
-				className="hidden absolute top-14 inset-x-0 px-5 py-5 bg-pisello flex items-center justify-center  md:relative md:flex  md:top-0 md:right-0 md:p-0 md:items-center md:mx-auto md:-left-16 md:bg-verde">
+				className="hidden absolute top-14 inset-x-0 px-5 py-5 bg-verde border-t-[1px] border-opacity-50 border-t-pisello flex items-center justify-center  md:relative md:flex  md:top-0 md:right-0 md:p-0 md:items-center md:mx-auto md:-left-16 md:border-none">
 				<form onSubmit={getSearch}>
 					<input
 						className=" text-verde w-72 py-1 pl-3 pr-10 rounded-full focus:outline-verde focus:ring-verde focus:border-verde md:w-96"
@@ -56,8 +56,8 @@ const SearchBar = ({ onData }) => {
 				</form>
 			</div>
 			{/* TOGGLE MENU ICON */}
-			<a class="md:hidden text-crema text-3xl" onClick={toggleMenu}>
-				<AiOutlineMenu />
+			<a class="md:hidden text-crema text-3xl cursor-pointer" onClick={toggleMenu}>
+				<AiOutlineSearch />
 			</a>
 		</nav>
 	);
