@@ -18,10 +18,10 @@ const SearchBar = ({ onData }) => {
 
 	function getSearch(e) {
 		e.preventDefault();
-		navigate('/');
 		closeMobileMenu();
 		onData(search);
 		setSearch('');
+		navigate('/');
 	}
 
 	return (
