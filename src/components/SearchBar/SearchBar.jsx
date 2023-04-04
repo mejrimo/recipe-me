@@ -21,7 +21,7 @@ const SearchBar = ({ onData }) => {
 		closeMobileMenu();
 		onData(search);
 		setSearch('');
-		navigate('/');
+		// navigate('/');
 	}
 
 	return (
