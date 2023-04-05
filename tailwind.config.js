@@ -7,7 +7,6 @@ export default {
 			crema: '#F0E6E0',
 			verde: '#607D59',
 			pisello: '#7F8F67',
-			grigio: '#9ca3af',
 			grigioscuro: '#4b5563',
 			bianco: '#ffffff',
 		},
