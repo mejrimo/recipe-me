@@ -12,9 +12,9 @@ API documentation [spoonacular](https://spoonacular.com/food-api/docs#Search-Rec
 
 ## Demo
 
-![RecipeMe-screenshot](https://user-images.githubusercontent.com/110642673/230080206-4261377e-9ec4-47fd-a42a-0a56a216552b.jpg)
+![RecipeMe-screenshot](https://user-images.githubusercontent.com/110642673/230080206-4261377e-9ec4-47fd-a42a-0a56a216552b.jpg) ![RecipeMe-demo](https://user-images.githubusercontent.com/110642673/230078428-bf3cf8f9-ab20-4ea4-a701-bd5ae2fc3238.gif)
 
-![RecipeMe-demo](https://user-images.githubusercontent.com/110642673/230078428-bf3cf8f9-ab20-4ea4-a701-bd5ae2fc3238.gif)
+![mobile-screenshot](https://user-images.githubusercontent.com/110642673/230087772-f459b18a-0a37-4e2f-85af-2fb87d4f74fe.jpg) ![mobile-demo](https://user-images.githubusercontent.com/110642673/230087945-f942235a-0255-4a03-86a6-690e5be31700.gif)
 
 ## Color Reference
 
