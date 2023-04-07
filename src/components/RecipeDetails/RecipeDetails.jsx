@@ -105,7 +105,7 @@ const RecipeDetails = () => {
 											href={details.spoonacularSourceUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="uppercase cursor-pointer active:text-pisello lg:hover:text-pisello transition-all duration-200">
+											className="uppercase cursor-pointer text-verde active:text-pisello lg:hover:text-pisello transition-all duration-200">
 											here
 										</a>
 									</div>
