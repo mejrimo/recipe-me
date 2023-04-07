@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Loader from './components/Loader/Loader';
 import Recipes from './components/Recipes/Recipes';
 import SearchBar from './components/SearchBar/SearchBar';
+import RecipeDetails from './components/RecipeDetails/RecipeDetails';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12&tags=vegetarian`;
@@ -73,6 +74,7 @@ const App = () => {
 							element={<>{isError ? <Error /> : <>{isLoading ? <Loader /> : <Recipes />}</>} </>}
 						/>
 						<Route path="/about" element={<About />} />
+						<Route path="/recipe/:id" element={<RecipeDetails />} />
 					</Routes>
 					<Footer />
 				</AppContext.Provider>
