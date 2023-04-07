@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 const Footer = () => {
 	return (
-		<footer className="absolute bottom-0 w-full flex items-center justify-between bg-verde p-2">
+		<footer className="absolute bottom-auto w-full flex items-center justify-between bg-verde p-2">
 			<div className="flex items-center justify-center">
 				<a
 					href="https://github.com/mejrimo"
@@ -16,7 +16,7 @@ const Footer = () => {
 					href="https://www.linkedin.com/in/mohamed-mejri-925157234/"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="cursor-pointer mx-1 text-bianco text-xl md:text-2xl active:text-pisello lg:hover:text-pisello transition-all duration-200 ">
+					className="cursor-pointer mx-1 text-bianco text-xl md:text-2xl active:text-pisello lg:hover:text-pisello transition-all duration-200">
 					<AiFillLinkedin />
 				</a>
 			</div>
