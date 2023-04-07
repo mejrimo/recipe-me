@@ -1,16 +1,16 @@
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+	const navigate = useNavigate();
 	return (
 		<div className="flex items-center justify-center">
 			<div className="mt-5 mx-5 lg:mt-10 lg:mx-10 flex flex-col">
 				<div className="mb-5 flex items-center justify-between">
-					<Link
-						to="/"
-						className="text-2xl md:text-3xl lg:text-4xl cursor-pointer active:text-pisello lg:hover:text-pisello transition-all duration-200">
-						<AiOutlineArrowLeft />
-					</Link>
+					<AiOutlineArrowLeft
+						className="text-2xl md:text-3xl lg:text-4xl cursor-pointer active:text-pisello lg:hover:text-pisello transition-all duration-200"
+						onClick={() => navigate(-1)}
+					/>
 					<h2 className="mx-auto text-2xl md:text-4xl lg:text-5xl">About</h2>
 				</div>
 				<p className="text-sm md:text-xl lg:text-2xl text-center">
