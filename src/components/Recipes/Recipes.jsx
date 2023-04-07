@@ -6,11 +6,9 @@ const Recipes = () => {
 	const { recipes } = useContext(AppContext);
 
 	const recipesElements = recipes.map((recipe) => {
-		const { id, title, image, spoonacularSourceUrl, summary } = recipe;
+		const { id, title, image, summary } = recipe;
 
-		return (
-			<Recipe key={id} title={title} image={image} url={spoonacularSourceUrl} summary={summary} />
-		);
+		return <Recipe key={id} id={id} title={title} image={image} summary={summary} />;
 	});
 
 	return (
