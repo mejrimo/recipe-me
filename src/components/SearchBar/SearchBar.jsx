@@ -27,7 +27,7 @@ const SearchBar = ({ onData }) => {
 	return (
 		<>
 			<div className="z-50 sticky top-0">
-				<nav className="relative flex flex-wrap items-center justify-between px-3 py-4 bg-verde drop-shadow">
+				<nav className="relative flex flex-wrap items-center justify-between px-3 py-2 bg-verde drop-shadow">
 					<div className="container flex flex-wrap items-center justify-between">
 						<div className="w-full flex items-center justify-between lg:w-auto">
 							<a
