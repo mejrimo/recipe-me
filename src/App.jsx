@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import useSearch from './hooks/useSearch';
 import useFetch from './hooks/useFetch';
+import useSearch from './hooks/useSearch';
 import About from './components/About/About';
 import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
@@ -21,18 +21,24 @@ const App = () => {
 	const [isError, setIsError] = useState(false);
 	const [recipes, setRecipes] = useState([]);
 	const [query, setQuery] = useState('');
-	const { loading, fError, data } = useFetch(startingUrl);
+	const { fLoading, fError, fData } = useFetch(startingUrl);
+	const { isSearching, isErr, searchData } = useSearch(query);
 
 	const handleSearchData = (dataFromSearchBar) => {
 		setQuery(dataFromSearchBar);
 	};
 
 	useEffect(() => {
-		setRecipes(data);
-		setIsError(fError);
-		setIsLoading(loading);
-		console.log(data);
-	}, []);
+		if (query) {
+			setRecipes(searchData);
+			setIsError(isErr);
+			setIsLoading(isSearching);
+		} else {
+			setRecipes(fData);
+			setIsError(fError);
+			setIsLoading(fLoading);
+		}
+	}, [fData, searchData]);
 
 	return (
 		<>

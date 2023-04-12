@@ -10,31 +10,27 @@ const useSearch = (query) => {
 
 	const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${query}`;
 
-	const mounted = useRef();
+	// const mounted = useRef();
 	useEffect(() => {
-		if (!mounted.current) {
-			mounted.current = true;
-		} else {
-			const fetchSearchData = async () => {
-				try {
-					const res = await axios.get(searchUrl);
-					const data = await res?.data?.results;
+		const fetchSearchData = async () => {
+			try {
+				const res = await axios.get(searchUrl);
+				const data = await res?.data?.results;
 
-					if (!data.length) {
-						setIsErr(true);
-					} else {
-						setIsErr(false);
-						setSearchData(data);
-					}
-				} catch (error) {
-					alert(error.message);
+				if (!data.length) {
 					setIsErr(true);
+				} else {
+					setIsErr(false);
+					setSearchData(data);
 				}
-				setIsSearching(false);
-			};
+			} catch (error) {
+				alert(error.message);
+				setIsErr(true);
+			}
+			setIsSearching(false);
+		};
 
-			fetchSearchData();
-		}
+		fetchSearchData();
 	}, [query]);
 
 	return { isSearching, isErr, searchData };
