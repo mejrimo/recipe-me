@@ -1,6 +1,7 @@
-import axios from 'axios';
 import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import useSearch from './hooks/useSearch';
+import useFetch from './hooks/useFetch';
 import About from './components/About/About';
 import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
@@ -9,59 +10,34 @@ import Recipes from './components/Recipes/Recipes';
 import SearchBar from './components/SearchBar/SearchBar';
 import RecipeDetails from './components/RecipeDetails/RecipeDetails';
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12&tags=vegetarian`;
 // https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&diet=vegetarian&number=12&addRecipeInformation=true
 
 export const AppContext = createContext();
 
 const App = () => {
-	const [recipes, setRecipes] = useState([]);
+	const [query, setQuery] = useState('');
+	const { loading, fError, data } = useFetch();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
+	const [recipes, setRecipes] = useState([]);
+	const { isSearching, isErr, searchData } = useSearch(query);
+	console.log(data);
+
+	const handleSearchData = (dataFromSearchBar) => {
+		setQuery(dataFromSearchBar);
+	};
 
 	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const res = await axios.get(startingUrl);
-				const data = res.data.recipes;
-
-				setRecipes(data);
-				setIsLoading(false);
-			} catch (error) {
-				alert(error.message);
-				setIsError(true);
-			}
-		};
-
-		fetchData();
-	}, []);
-
-	function handleSearchData(dataFromSearchBar) {
-		setIsLoading(true);
-		const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${dataFromSearchBar}`;
-
-		const fetchData = async () => {
-			try {
-				const res = await axios.get(searchUrl);
-				const data = res.data.results;
-
-				if (!data.length) {
-					setIsError(true);
-				} else {
-					setIsError(false);
-					setRecipes(data);
-					setIsLoading(false);
-				}
-			} catch (error) {
-				alert(error.message);
-				setIsLoading(false);
-				setIsError(true);
-			}
-		};
-
-		fetchData();
-	}
+		if (query) {
+			setRecipes(searchData);
+			setIsError(isErr);
+			setIsLoading(isSearching);
+		} else {
+			setRecipes(data);
+			setIsError(fError);
+			setIsLoading(loading);
+		}
+	}, [query]);
 
 	return (
 		<>
