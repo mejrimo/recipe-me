@@ -18,20 +18,19 @@ const useSearch = (query) => {
 			const fetchSearchData = async () => {
 				try {
 					const res = await axios.get(searchUrl);
-					const data = res?.data?.results;
+					const data = await res?.data?.results;
 
 					if (!data.length) {
 						setIsErr(true);
 					} else {
 						setIsErr(false);
 						setSearchData(data);
-						setIsSearching(false);
 					}
 				} catch (error) {
 					alert(error.message);
-					setIsSearching(false);
 					setIsErr(true);
 				}
+				setIsSearching(false);
 			};
 
 			fetchSearchData();

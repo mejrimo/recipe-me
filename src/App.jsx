@@ -10,34 +10,29 @@ import Recipes from './components/Recipes/Recipes';
 import SearchBar from './components/SearchBar/SearchBar';
 import RecipeDetails from './components/RecipeDetails/RecipeDetails';
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+const startingUrl = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12&tags=vegetarian`;
 // https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&diet=vegetarian&number=12&addRecipeInformation=true
 
 export const AppContext = createContext();
 
 const App = () => {
-	const [query, setQuery] = useState('');
-	const { loading, fError, data } = useFetch();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
 	const [recipes, setRecipes] = useState([]);
-	const { isSearching, isErr, searchData } = useSearch(query);
-	console.log(data);
+	const [query, setQuery] = useState('');
+	const { loading, fError, data } = useFetch(startingUrl);
 
 	const handleSearchData = (dataFromSearchBar) => {
 		setQuery(dataFromSearchBar);
 	};
 
 	useEffect(() => {
-		if (query) {
-			setRecipes(searchData);
-			setIsError(isErr);
-			setIsLoading(isSearching);
-		} else {
-			setRecipes(data);
-			setIsError(fError);
-			setIsLoading(loading);
-		}
-	}, [query]);
+		setRecipes(data);
+		setIsError(fError);
+		setIsLoading(loading);
+		console.log(data);
+	}, []);
 
 	return (
 		<>
