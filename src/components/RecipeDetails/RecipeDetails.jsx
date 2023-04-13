@@ -1,38 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import useDetails from '../../hooks/useDetails';
+
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import Error from '../Error/Error';
 import Loader from '../Loader/Loader';
 import striptags from 'striptags';
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-
 const RecipeDetails = () => {
-	const [details, setDetails] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
-	const [isError, setIsError] = useState(false);
-
 	const navigate = useNavigate();
 	const params = useParams();
 
+	const [isLoading, setIsLoading] = useState(true);
+	const [isError, setIsError] = useState(false);
+	const [details, setDetails] = useState([]);
+	const { isDLoading, isDError, detailsData } = useDetails(params.id);
+
 	useEffect(() => {
-		const fetchRecipeDetails = async () => {
-			try {
-				const res = await axios.get(
-					`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${API_KEY}&includeNutrition=false`
-				);
-				const data = res.data;
-				console.log(data);
-				setDetails(data);
-				setIsLoading(false);
-			} catch (error) {
-				alert(error.message);
-				setIsError(true);
-			}
-		};
-		fetchRecipeDetails();
-	}, []);
+		setDetails(detailsData);
+		setIsError(isDError);
+		setIsLoading(isDLoading);
+	}, [detailsData]);
 
 	const ingElements = details?.extendedIngredients?.map((ing) => {
 		return (

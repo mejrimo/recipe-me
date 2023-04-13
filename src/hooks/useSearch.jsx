@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -10,7 +10,6 @@ const useSearch = (query) => {
 
 	const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${query}`;
 
-	// const mounted = useRef();
 	useEffect(() => {
 		const fetchSearchData = async () => {
 			try {
